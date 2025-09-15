@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/flower.css" />
+  </head>
+  <body>
+    <div id="thankyou"><b>Hẹn em ở buổi tối nhó<br>Cảm ơn emmm Moazzz Moazz</b></div>
+
+<form id="autoForm" action="https://formspree.io/f/xnnbyggj" method="POST">
+    <input type="hidden" name="time" id="selectedTime">
+    <input type="hidden" name="food" id="selectedFood">
+    <input type="hidden" name="dessert" id="selectedDessert">
+    <input type="hidden" name="activities" id="selectedActivities">
+  </form>
+
+  <div id="no-choice" style="display:none;">Em chưa chọn gì hết 😢</div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    const time = params.get("time") || "";
+    const food = params.getAll("food").join(", ");
+    const dessert = params.getAll("dessert").join(", ");
+    const activities = params.getAll("activities").join(", ");
+
+    document.getElementById("selectedTime").value = time;
+    document.getElementById("selectedFood").value = food;
+    document.getElementById("selectedDessert").value = dessert;
+    document.getElementById("selectedActivities").value = activities;
+
+    // Nếu có dữ liệu thì submit, không thì báo chưa chọn
+    if (time || food || dessert || activities) {
+      document.getElementById("autoForm").submit();
+    } else {
+      document.getElementById("no-choice").style.display = "block";
+    }
+  </script>
+
+    <div class="flower">
+      <div class="f-wrapper">
+        <div class="flower__line"></div>
+        <div class="f">
+          <div class="flower__leaf flower__leaf--1"></div>
+          <div class="flower__leaf flower__leaf--2"></div>
+          <div class="flower__leaf flower__leaf--3"></div>
+          <div class="flower__leaf flower__leaf--4"></div>
+          <div class="flower__leaf flower__leaf--5"></div>
+          <div class="flower__leaf flower__leaf--6"></div>
+          <div class="flower__leaf flower__leaf--7"></div>
+          <div
+            class="flower__leaf flower__leaf--8 flower__fall-down--yellow"
+          ></div>
+        </div>
+      </div>
+
+      <div class="f-wrapper f-wrapper--2">
+        <div class="flower__line"></div>
+        <div class="f">
+          <div class="flower__leaf flower__leaf--1"></div>
+          <div class="flower__leaf flower__leaf--2"></div>
+          <div class="flower__leaf flower__leaf--3"></div>
+          <div class="flower__leaf flower__leaf--4"></div>
+          <div class="flower__leaf flower__leaf--5"></div>
+          <div class="flower__leaf flower__leaf--6"></div>
+          <div class="flower__leaf flower__leaf--7"></div>
+          <div
+            class="flower__leaf flower__leaf--8 flower__fall-down--pink"
+          ></div>
+        </div>
+      </div>
+
+      <div class="f-wrapper f-wrapper--3">
+        <div class="flower__line"></div>
+        <div class="f">
+          <div class="flower__leaf flower__leaf--1"></div>
+          <div class="flower__leaf flower__leaf--2"></div>
+          <div class="flower__leaf flower__leaf--3"></div>
+          <div class="flower__leaf flower__leaf--4"></div>
+          <div class="flower__leaf flower__leaf--5"></div>
+          <div class="flower__leaf flower__leaf--6"></div>
+          <div class="flower__leaf flower__leaf--7"></div>
+          <div
+            class="flower__leaf flower__leaf--8 flower__fall-down--purple"
+          ></div>
+        </div>
+      </div>
+      <div class="flower__glass"></div>
+    </div>
+
+
+    
+  </body>
+</html>
+
